@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  text-align: center;
 }
 
 header {
@@ -31,12 +32,16 @@ header .pj-link {
 
 main {
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 section {
   margin-bottom: 3rem;
+  text-align: center;
 }
 
+/* Section Contact */
 .contact-section form {
   display: flex;
   flex-direction: column;
@@ -66,7 +71,6 @@ section {
 }
 
 /* Carrousel */
-
 .carousel-section {
   margin: 3rem 0;
   text-align: center;
@@ -108,4 +112,72 @@ section {
 
 .carousel button#next {
   right: 10px;
+}
+
+/*Section témoignages*/
+.testimonials {
+  background-color: #f7f7f7;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonials h2 {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-style: italic;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.testimonials span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Section Fournisseurs */
+.suppliers-section {
+  background-color: #f9f9f9;
+  padding: 3rem 0;
+  margin-top: 4rem;
+}
+
+.suppliers-section h2 {
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.suppliers-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.supplier-logo {
+  max-width: 150px;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.supplier-logo:hover {
+  filter: grayscale(0%);
 }
