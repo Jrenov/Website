@@ -107,42 +107,86 @@ section {
   text-align: center;
 }
 
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .carousel-container {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .carousel-container > div:first-child {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .carousel {
+    flex: 1;
+    max-width: 600px;
+  }
+}
+
 .carousel {
   position: relative;
-  max-width: 800px;
+  max-width: 100%;
   margin: auto;
   overflow: hidden;
 }
 
-.carousel img {
-  display: none;
+.carousel [data-carousel-track] {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
   width: 100%;
-  border-radius: 8px;
 }
 
-.carousel img.active {
-  display: block;
+.carousel img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 8px;
+  aspect-ratio: 16/9;
 }
 
 .carousel button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #2c3e50;
-  color: white;
+  background: rgba(255, 255, 255, 0.7);
+  color: #2c3e50;
   border: none;
-  padding: 1rem;
+  padding: 0.5rem;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 50%;
+  z-index: 10;
 }
 
-.carousel button#prev {
+.carousel button:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.carousel [data-carousel-prev] {
   left: 10px;
 }
 
-.carousel button#next {
+.carousel [data-carousel-next] {
   right: 10px;
+}
+
+@media (max-width: 640px) {
+  .carousel [data-carousel-track] {
+    flex-direction: column;
+  }
+
+  .carousel [data-carousel-prev],
+  .carousel [data-carousel-next] {
+    display: none;
+  }
 }
 
 /*Section témoignages*/
