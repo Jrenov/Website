@@ -41,6 +41,37 @@ section {
   text-align: center;
 }
 
+/* Section Présentation */
+.presentation {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.presentation h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.presentation strong {
+  color: #333;
+}
+
+.presentation em {
+  color: #666;
+  font-style: italic;
+}
+
+.slogan {
+  font-style: italic;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #555;
+  margin-top: 1.5rem;
+}
+
 /* Section Contact */
 .contact-section form {
   display: flex;
