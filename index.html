@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jrenov - Rénovation à Vannes</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jrenov - Vannes</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Jrenov - Rénovation à Vannes</h1>
-    <p>Entreprise spécialisée dans la rénovation intérieure et extérieure.</p>
-    <a href="https://www.pagesjaunes.fr/pros/57068214" target="_blank" class="pj-link">Voir sur Pages Jaunes</a>
+    <h1>Jrenov</h1>
+    <p>Travaux de rénovation à Vannes</p>
+    <a class="pj-link" href="https://www.pagesjaunes.fr/pros/58943980" target="_blank">
+      Voir sur Pages Jaunes
+    </a><br />
     <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
       Contactez-nous
     </button>
@@ -19,21 +21,35 @@
   <main>
     <section class="presentation">
       <h2>Nos services</h2>
-      <p>Jrenov intervient sur tous vos projets de rénovation : peinture, carrelage, salle de bain, isolation, et bien plus encore. Basés à Vannes, nous accompagnons particuliers et professionnels dans leurs travaux avec professionnalisme et expertise.</p>
+      <p>Jrenov est une entreprise spécialisée dans la rénovation intérieure et extérieure basée à Vannes. Nous intervenons sur des chantiers de toutes tailles pour améliorer votre habitat.</p>
+    </section>
+
+    <section class="carousel-section">
+      <h2>Nos réalisations</h2>
+      <div class="carousel">
+        <img src="images/image1.jpg" class="active" alt="Réalisation 1" />
+        <img src="images/image2.jpg" alt="Réalisation 2" />
+        <img src="images/image3.jpg" alt="Réalisation 3" />
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
+      </div>
     </section>
 
     <section id="contact" class="contact-section">
-      <h2>Formulaire de contact</h2>
+      <h2>Contact</h2>
       <form name="contact" method="POST" data-netlify="true">
-        <label>Email :</label>
-        <input type="email" name="email" required>
-
-        <label>Message :</label>
-        <textarea name="message" required></textarea>
-
+        <input type="hidden" name="form-name" value="contact" />
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
         <button type="submit">Envoyer</button>
       </form>
     </section>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
