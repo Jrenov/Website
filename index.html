@@ -3,21 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
+  <title>Jrenov - Rénovation à Vannes</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>Jrenov - Rénovation à Vannes</h1>
+    <p>Entreprise spécialisée dans la rénovation intérieure et extérieure.</p>
+    <a href="https://www.pagesjaunes.fr/pros/57068214" target="_blank" class="pj-link">Voir sur Pages Jaunes</a>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+      Contactez-nous
+    </button>
+  </header>
+
   <main>
-    <h1>Contactez-moi</h1>
-    <form name="contact" method="POST" data-netlify="true">
-      <label>Email :</label>
-      <input type="email" name="email" required>
+    <section class="presentation">
+      <h2>Nos services</h2>
+      <p>Jrenov intervient sur tous vos projets de rénovation : peinture, carrelage, salle de bain, isolation, et bien plus encore. Basés à Vannes, nous accompagnons particuliers et professionnels dans leurs travaux avec professionnalisme et expertise.</p>
+    </section>
 
-      <label>Message :</label>
-      <textarea name="message" required></textarea>
+    <section id="contact" class="contact-section">
+      <h2>Formulaire de contact</h2>
+      <form name="contact" method="POST" data-netlify="true">
+        <label>Email :</label>
+        <input type="email" name="email" required>
 
-      <button type="submit">Envoyer</button>
-    </form>
+        <label>Message :</label>
+        <textarea name="message" required></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
   </main>
 </body>
 </html>
