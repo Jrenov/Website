@@ -1,3 +1,4 @@
+/* Variables globales */
 :root {
   --main-blue: #2e728f;
   --highlight-yellow: #f9ec6c;
@@ -7,6 +8,7 @@
   --white: #ffffff;
 }
 
+/* Styles de base */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -17,6 +19,7 @@ body {
   text-align: center;
 }
 
+/* En-tête */
 header {
   background-color: var(--dark-gray);
   padding: 2rem;
@@ -48,6 +51,7 @@ header .pj-link {
   text-decoration: underline;
 }
 
+/* Contenu principal */
 main {
   padding: 2rem;
   max-width: 1200px;
@@ -59,7 +63,7 @@ section {
   text-align: center;
 }
 
-/* Présentation */
+/* Section Présentation */
 .presentation {
   background-color: var(--white);
   color: var(--main-blue);
@@ -161,12 +165,7 @@ section {
   color: var(--dark-gray);
 }
 
-/* Carrousel */
-.carousel-section {
-  margin: 3rem 0;
-  text-align: center;
-}
-
+/* Carrousels */
 .carousel-container {
   display: flex;
   flex-direction: column;
@@ -244,7 +243,7 @@ section {
   right: 10px;
 }
 
-/* Fournisseurs */
+/* Section Fournisseurs */
 .suppliers-section {
   background-color: #f4f4f4;
   padding: 3rem 0;
