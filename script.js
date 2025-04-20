@@ -63,3 +63,41 @@ window.addEventListener('scroll', () => {
     floatingBtn.classList.remove('visible');
   }
 });
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.querySelector('.lightbox-caption');
+const closeBtn = document.querySelector('.lightbox-close');
+
+// Ajouter un gestionnaire de clic à toutes les images des carrousels
+document.querySelectorAll('.carousel img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent = img.alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Empêcher le scroll de la page
+  });
+});
+
+// Fermer la lightbox
+closeBtn.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = ''; // Réactiver le scroll
+});
+
+// Fermer la lightbox en cliquant en dehors de l'image
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+// Fermer la lightbox avec la touche Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
