@@ -49,3 +49,17 @@ carousels.forEach(carousel => {
     updateCarousel();
   });
 });
+
+// Gestion du bouton de contact flottant
+const floatingBtn = document.querySelector('.floating-contact-btn');
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  
+  // Afficher le bouton si on est à plus de 200px du haut
+  if (currentScrollY > 200) {
+    floatingBtn.classList.add('visible');
+  } else {
+    floatingBtn.classList.remove('visible');
+  }
+});
