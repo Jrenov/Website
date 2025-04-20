@@ -69,34 +69,75 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxCaption = document.querySelector('.lightbox-caption');
 const closeBtn = document.querySelector('.lightbox-close');
+const prevBtn = document.querySelector('.lightbox-prev');
+const nextBtn = document.querySelector('.lightbox-next');
+
+let currentCarousel = null;
+let currentIndex = 0;
 
 // Ajouter un gestionnaire de clic à toutes les images des carrousels
-document.querySelectorAll('.carousel img').forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightboxCaption.textContent = img.alt;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Empêcher le scroll de la page
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const images = carousel.querySelectorAll('img');
+  
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentCarousel = carousel;
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
   });
+});
+
+function updateLightbox() {
+  const images = currentCarousel.querySelectorAll('img');
+  lightboxImg.src = images[currentIndex].src;
+  lightboxCaption.textContent = images[currentIndex].alt;
+}
+
+// Navigation
+prevBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const images = currentCarousel.querySelectorAll('img');
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateLightbox();
+});
+
+nextBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const images = currentCarousel.querySelectorAll('img');
+  currentIndex = (currentIndex + 1) % images.length;
+  updateLightbox();
+});
+
+// Navigation au clavier
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('active')) return;
+  
+  if (e.key === 'Escape') {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  } else if (e.key === 'ArrowLeft') {
+    const images = currentCarousel.querySelectorAll('img');
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+  } else if (e.key === 'ArrowRight') {
+    const images = currentCarousel.querySelectorAll('img');
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+  }
 });
 
 // Fermer la lightbox
 closeBtn.addEventListener('click', () => {
   lightbox.classList.remove('active');
-  document.body.style.overflow = ''; // Réactiver le scroll
+  document.body.style.overflow = '';
 });
 
 // Fermer la lightbox en cliquant en dehors de l'image
 lightbox.addEventListener('click', (e) => {
   if (e.target === lightbox) {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-});
-
-// Fermer la lightbox avec la touche Escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && lightbox.classList.contains('active')) {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
   }
