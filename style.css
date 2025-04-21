@@ -1,290 +1,380 @@
 /* Variables globales */
 :root {
-  --main-blue: #2e728f;
-  --highlight-yellow: #f9ec6c;
-  --accent-orange: #f28c28;
-  --light-gray: #e6e6e6;
-  --dark-gray: #1c3e4d;
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #e74c3c;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
   --white: #ffffff;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
 
-/* Styles de base */
-body {
-  font-family: 'Arial', sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: var(--main-blue);
-  color: var(--white);
-  line-height: 1.6;
-  text-align: center;
+  box-sizing: border-box;
 }
 
-/* En-tête */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+/* Header moderne */
 header {
-  background-color: var(--dark-gray);
-  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  padding: 2rem 1rem;
   text-align: center;
-  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
+  opacity: 0.1;
 }
 
 header h1 {
-  font-size: 3rem;
-  margin: 0;
-  color: var(--highlight-yellow);
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  position: relative;
 }
 
 header p {
   font-size: 1.2rem;
-  margin: 1rem 0;
-  color: var(--light-gray);
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  position: relative;
 }
 
-header button {
-  margin-top: 1.5rem;
-  padding: 1rem 2rem;
-  background-color: var(--accent-orange);
+/* Boutons modernes */
+button, .pj-link {
+  background-color: var(--accent-color);
   color: var(--white);
   border: none;
+  padding: 0.8rem 1.5rem;
   border-radius: 50px;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: bold;
   transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-}
-
-header button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  background-color: var(--highlight-yellow);
-  color: var(--dark-gray);
-}
-
-header .pj-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: var(--light-gray);
   text-decoration: none;
-  transition: var(--transition);
+  display: inline-block;
+  box-shadow: var(--shadow);
 }
 
-header .pj-link:hover {
-  color: var(--highlight-yellow);
+button:hover, .pj-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #c0392b;
 }
 
-/* Contenu principal */
-main {
-  padding: 2rem;
+/* Sections modernes */
+section {
+  padding: 4rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-section {
-  margin-bottom: 4rem;
+section h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
   text-align: center;
+  position: relative;
 }
 
-/* Section Présentation */
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+/* Présentation moderne */
 .presentation {
   background-color: var(--white);
-  color: var(--main-blue);
-  padding: 3rem;
-  max-width: 800px;
-  margin: 0 auto;
   border-radius: 15px;
-  text-align: left;
-  box-shadow: var(--shadow-lg);
-  transition: var(--transition);
+  padding: 3rem;
+  margin: 2rem auto;
+  box-shadow: var(--shadow);
 }
 
-.presentation:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.presentation h2 {
-  text-align: center;
-  color: var(--accent-orange);
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  font-size: 2rem;
-  letter-spacing: 1px;
-}
-
-.presentation strong {
-  color: var(--dark-gray);
-  font-weight: bold;
-}
-
-.presentation em {
-  color: var(--main-blue);
-  font-style: italic;
+.presentation p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .slogan {
   font-style: italic;
-  font-size: 1.3rem;
   text-align: center;
-  color: var(--main-blue);
+  color: var(--accent-color);
+  font-size: 1.3rem;
   margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 2px solid var(--light-gray);
 }
 
-/* Section Contact */
-.contact-section form {
+/* Carrousel container moderne */
+.carousel-container {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  max-width: 600px;
-  margin: auto;
+  gap: 2rem;
+}
+
+.carousel-container h3 {
+  text-align: center;
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.carousel-container h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.carousel-container .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.carousel-container .text-content {
+  flex: 1;
+}
+
+.carousel-container .carousel {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .carousel-container .content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .carousel-container .text-content {
+    flex: 1;
+    padding-right: 2rem;
+  }
+
+  .carousel-container .carousel {
+    width: 50%;
+  }
+}
+
+/* Testimonials modernes */
+.testimonials {
   background-color: var(--white);
-  color: var(--main-blue);
-  padding: 3rem;
+  padding: 4rem 2rem;
+  margin: 2rem auto;
   border-radius: 15px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
+}
+
+.testimonial {
+  background-color: var(--light-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonial span {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Formulaire de contact moderne */
+.contact-section {
+  background-color: var(--white);
+  padding: 4rem 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  margin-bottom: 6rem;
+}
+
+.contact-section form {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .contact-section label {
-  margin-top: 1.5rem;
-  font-weight: bold;
-  text-align: left;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
 }
 
 .contact-section input,
 .contact-section textarea {
-  padding: 1rem;
-  font-size: 1rem;
-  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid #e0e0e0;
   border-radius: 8px;
-  border: 2px solid var(--light-gray);
   transition: var(--transition);
 }
 
 .contact-section input:focus,
 .contact-section textarea:focus {
+  border-color: var(--accent-color);
   outline: none;
-  border-color: var(--accent-orange);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
 }
 
-.contact-section button {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: var(--accent-orange);
+.contact-section button[type="submit"] {
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
   color: var(--white);
   border: none;
-  cursor: pointer;
   border-radius: 50px;
-  font-weight: bold;
+  font-weight: 600;
+  cursor: pointer;
   transition: var(--transition);
+  box-shadow: var(--shadow);
 }
 
-.contact-section button:hover {
+.contact-section button[type="submit"]:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  background-color: var(--highlight-yellow);
-  color: var(--dark-gray);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #c0392b;
 }
 
-/* Section Témoignages */
-.testimonials {
+/* Fournisseurs modernes */
+.suppliers-section {
   background-color: var(--white);
-  color: var(--main-blue);
-  padding: 3rem;
-  text-align: center;
+  padding: 4rem 2rem;
   border-radius: 15px;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
+  margin-top: 4rem;
 }
 
-.testimonials h2 {
-  color: var(--accent-orange);
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.suppliers-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.testimonial {
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  font-style: italic;
-  padding: 2rem;
-  background-color: var(--light-gray);
-  border-radius: 10px;
+.supplier-logo {
+  max-width: 150px;
+  height: auto;
+  filter: grayscale(100%);
   transition: var(--transition);
 }
 
-.testimonial:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+.supplier-logo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
-.testimonial span {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-  color: var(--dark-gray);
-  font-style: normal;
-}
-
-/* Carrousels */
-.carousel-container {
+/* Bouton de contact flottant moderne */
+.floating-contact-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--accent-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  z-index: 1000;
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin: 3rem 0;
-  background-color: var(--white);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: var(--shadow-lg);
-  color: var(--main-blue);
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.carousel-container p {
-  color: var(--main-blue);
-  margin-bottom: 1rem;
-  line-height: 1.6;
+.floating-contact-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.carousel-container h3 {
-  color: var(--accent-orange);
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-@media (min-width: 768px) {
-  .carousel-container {
-    flex-direction: row;
-    align-items: center;
+/* Responsive design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
   }
-
-  .carousel-container > div:first-child {
-    flex: 1;
-    text-align: left;
+  
+  section {
+    padding: 2rem 1rem;
   }
-
-  .carousel {
-    flex: 1;
-    max-width: 600px;
+  
+  .presentation {
+    padding: 2rem;
+  }
+  
+  .suppliers-logos {
+    gap: 1rem;
+  }
+  
+  .supplier-logo {
+    max-width: 120px;
   }
 }
 
+/* Styles des liens */
+.pj-link {
+  display: inline-block;
+  margin: 1rem 0;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--accent-color);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.pj-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #c0392b;
+}
+
+/* Styles des carrousels */
 .carousel {
   position: relative;
-  max-width: 100%;
-  margin: auto;
+  width: 50%;
   overflow: hidden;
   border-radius: 10px;
+  margin-top: 0;
 }
 
 .carousel [data-carousel-track] {
@@ -297,7 +387,6 @@ section {
   width: 100%;
   flex-shrink: 0;
   object-fit: cover;
-  border-radius: 10px;
   aspect-ratio: 16/9;
   cursor: pointer;
   transition: var(--transition);
@@ -311,133 +400,55 @@ section {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--white);
-  font-size: 2rem;
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: var(--accent-color);
   border: none;
-  padding: 1rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  transition: var(--transition);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  backdrop-filter: blur(5px);
+  font-size: 1.2rem;
+  transition: var(--transition);
+  z-index: 10;
+  color: var(--white);
 }
 
 .carousel button:hover {
-  background: var(--accent-orange);
+  background-color: #c0392b;
   transform: translateY(-50%) scale(1.1);
 }
 
 .carousel [data-carousel-prev] {
-  left: 2rem;
+  left: 1rem;
 }
 
 .carousel [data-carousel-next] {
-  right: 2rem;
+  right: 1rem;
 }
 
 @media (max-width: 768px) {
+  .carousel-container {
+    flex-direction: column;
+  }
+  
+  .carousel {
+    width: 100%;
+  }
+  
   .carousel button {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
   
   .carousel [data-carousel-prev] {
-    left: 1rem;
+    left: 0.5rem;
   }
   
   .carousel [data-carousel-next] {
-    right: 1rem;
-  }
-}
-
-/* Section Fournisseurs */
-.suppliers-section {
-  background-color: var(--white);
-  padding: 3rem;
-  margin-top: 4rem;
-  border-radius: 15px;
-  box-shadow: var(--shadow-lg);
-}
-
-.suppliers-section h2 {
-  margin-bottom: 2rem;
-  color: var(--main-blue);
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.suppliers-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.supplier-logo {
-  max-width: 150px;
-  height: auto;
-  filter: grayscale(100%);
-  transition: var(--transition);
-  padding: 1rem;
-  background-color: var(--light-gray);
-  border-radius: 10px;
-}
-
-.supplier-logo:hover {
-  filter: grayscale(0%);
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-}
-
-/* Bouton de contact flottant */
-.floating-contact-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background-color: var(--accent-orange);
-  color: var(--white);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: var(--shadow-lg);
-  transform: translateY(100px);
-  opacity: 0;
-  transition: var(--transition);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.floating-contact-btn.visible {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.floating-contact-btn:hover {
-  background-color: var(--highlight-yellow);
-  color: var(--dark-gray);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-
-@media (max-width: 768px) {
-  .floating-contact-btn {
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.75rem 1.5rem;
+    right: 0.5rem;
   }
 }
 
@@ -445,12 +456,12 @@ section {
 .lightbox {
   display: none;
   position: fixed;
-  z-index: 2000;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
   padding: 2rem;
   box-sizing: border-box;
 }
@@ -467,7 +478,7 @@ section {
   max-height: 80vh;
   object-fit: contain;
   border-radius: 10px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
 }
 
 .lightbox-caption {
@@ -483,13 +494,12 @@ section {
   right: 1.5rem;
   color: var(--white);
   font-size: 2.5rem;
-  font-weight: bold;
   cursor: pointer;
   transition: var(--transition);
 }
 
 .lightbox-close:hover {
-  color: var(--accent-orange);
+  color: var(--accent-color);
   transform: scale(1.1);
 }
 
@@ -497,47 +507,47 @@ section {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--white);
-  font-size: 2rem;
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   border: none;
-  padding: 1rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  transition: var(--transition);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  backdrop-filter: blur(5px);
+  font-size: 1.2rem;
+  transition: var(--transition);
 }
 
 .lightbox-nav:hover {
-  background: var(--accent-orange);
+  background-color: var(--white);
   transform: translateY(-50%) scale(1.1);
 }
 
 .lightbox-prev {
-  left: 2rem;
+  left: 1rem;
 }
 
 .lightbox-next {
-  right: 2rem;
+  right: 1rem;
 }
 
 @media (max-width: 768px) {
+  .carousel button,
   .lightbox-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
   
+  .carousel [data-carousel-prev],
   .lightbox-prev {
-    left: 1rem;
+    left: 0.5rem;
   }
   
+  .carousel [data-carousel-next],
   .lightbox-next {
-    right: 1rem;
+    right: 0.5rem;
   }
 }
