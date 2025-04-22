@@ -1,9 +1,9 @@
 /* Variables globales */
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #34495e;
-  --accent-color: #e74c3c;
-  --text-color: #333;
+  --primary-color: #1B7B8E;    /* Bleu pétrole/turquoise */
+  --secondary-color: #115E6E;  /* Version plus foncée du bleu */
+  --accent-color: #FFA000;     /* Orange/jaune vif */
+  --text-color: #333333;
   --light-bg: #f8f9fa;
   --white: #ffffff;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
