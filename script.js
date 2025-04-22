@@ -16,7 +16,7 @@ const imageConfig = {
       }
     ]
   },
-  "renovation": {
+  "interieur": {
     "images": [
       {
         "filename": "cuisine1.jpg",
@@ -117,7 +117,7 @@ function initCarousel(carousel) {
 document.addEventListener('DOMContentLoaded', () => {
   // Charger les carrousels
   loadCarouselImages('plomberie');
-  loadCarouselImages('renovation');
+  loadCarouselImages('interieur');
   loadCarouselImages('exterieur');
 
   let currentCarousel = null;

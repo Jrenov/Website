@@ -106,7 +106,7 @@ section h2::after {
 }
 
 /* Carrousel container moderne */
-.carousel-container {
+.realisation {
   background-color: var(--white);
   border-radius: 15px;
   padding: 2rem;
@@ -117,7 +117,7 @@ section h2::after {
   gap: 2rem;
 }
 
-.carousel-container h3 {
+.realisation h3 {
   text-align: center;
   margin: 0;
   color: var(--primary-color);
@@ -127,7 +127,7 @@ section h2::after {
   width: 100%;
 }
 
-.carousel-container h3::after {
+.realisation h3::after {
   content: '';
   display: block;
   width: 40px;
@@ -137,33 +137,33 @@ section h2::after {
   border-radius: 2px;
 }
 
-.carousel-container .content-wrapper {
+.realisation .content-wrapper {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   width: 100%;
 }
 
-.carousel-container .text-content {
+.realisation .text-content {
   flex: 1;
 }
 
-.carousel-container .carousel {
+.realisation .carousel {
   width: 100%;
 }
 
 @media (min-width: 768px) {
-  .carousel-container .content-wrapper {
+  .realisation .content-wrapper {
     flex-direction: row;
     align-items: flex-start;
   }
 
-  .carousel-container .text-content {
+  .realisation .text-content {
     flex: 1;
     padding-right: 2rem;
   }
 
-  .carousel-container .carousel {
+  .realisation .carousel {
     width: 50%;
   }
 }
@@ -196,7 +196,7 @@ section h2::after {
 }
 
 /* Formulaire de contact moderne */
-.contact-section {
+.contact {
   background-color: var(--white);
   padding: 4rem 2rem;
   border-radius: 15px;
@@ -204,20 +204,20 @@ section h2::after {
   margin-bottom: 6rem;
 }
 
-.contact-section form {
+.contact form {
   max-width: 600px;
   margin: 0 auto;
 }
 
-.contact-section label {
+.contact label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
   color: var(--primary-color);
 }
 
-.contact-section input,
-.contact-section textarea {
+.contact input,
+.contact textarea {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1.5rem;
@@ -226,14 +226,14 @@ section h2::after {
   transition: var(--transition);
 }
 
-.contact-section input:focus,
-.contact-section textarea:focus {
+.contact input:focus,
+.contact textarea:focus {
   border-color: var(--accent-color);
   outline: none;
   box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
 }
 
-.contact-section button[type="submit"] {
+.contact button[type="submit"] {
   display: block;
   margin: 2rem auto;
   padding: 1rem 2rem;
@@ -247,14 +247,14 @@ section h2::after {
   box-shadow: var(--shadow);
 }
 
-.contact-section button[type="submit"]:hover {
+.contact button[type="submit"]:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   background-color: #c0392b;
 }
 
 /* Fournisseurs modernes */
-.suppliers-section {
+.suppliers {
   background-color: var(--white);
   padding: 4rem 2rem;
   border-radius: 15px;
