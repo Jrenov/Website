@@ -113,12 +113,6 @@ function initCarousel(carousel) {
   updateCarousel();
 }
 
-// Fonction pour fermer la lightbox
-function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  lightbox.classList.remove('active');
-}
-
 // Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
   // Charger les carrousels
@@ -126,42 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
   loadCarouselImages('renovation');
   loadCarouselImages('exterieur');
 
-  // Gestionnaire pour fermer la lightbox
-  document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
-  });
-
-  // Navigation lightbox
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('.lightbox-content');
-  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
-  const prevBtn = lightbox.querySelector('.lightbox-prev');
-  const nextBtn = lightbox.querySelector('.lightbox-next');
-
   let currentCarousel = null;
   let currentIndex = 0;
-
-  function updateLightboxImage() {
-    const images = imageConfig[currentCarousel].images;
-    const image = images[currentIndex];
-    lightboxImg.src = `images/${currentCarousel}/${image.filename}`;
-    lightboxCaption.textContent = image.caption;
-  }
-
-  prevBtn.addEventListener('click', () => {
-    if (!currentCarousel) return;
-    const images = imageConfig[currentCarousel].images;
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateLightboxImage();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    if (!currentCarousel) return;
-    const images = imageConfig[currentCarousel].images;
-    currentIndex = (currentIndex + 1) % images.length;
-    updateLightboxImage();
-  });
 
   // Mise à jour de l'événement onclick des images
   document.querySelectorAll('.carousel img').forEach((img) => {
@@ -174,43 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
       lightbox.classList.add('active');
     };
   });
+
+  // Initialisation des fonctionnalités
+  initFloatingButton();
+  initLightbox();
 });
-
-// Initialisation des carrousels
-function initCarousels() {
-  const carousels = document.querySelectorAll('[data-carousel]');
-
-  carousels.forEach(carousel => {
-    const prevButton = carousel.querySelector('[data-carousel-prev]');
-    const nextButton = carousel.querySelector('[data-carousel-next]');
-    const track = carousel.querySelector('[data-carousel-track]');
-    const slides = Array.from(track.children);
-    let currentIndex = 0;
-    
-    function getSlideWidth() {
-      return slides[0].getBoundingClientRect().width;
-    }
-
-    function updateCarousel() {
-      const slideWidth = getSlideWidth();
-      const offset = -currentIndex * slideWidth;
-      track.style.transform = `translateX(${offset}px)`;
-    }
-
-    prevButton.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      updateCarousel();
-    });
-
-    nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateCarousel();
-    });
-
-    updateCarousel();
-    window.addEventListener('resize', updateCarousel);
-  });
-}
 
 // Gestion du bouton de contact flottant
 function initFloatingButton() {
@@ -303,10 +231,3 @@ function initLightbox() {
     }
   });
 }
-
-// Initialisation de toutes les fonctionnalités
-document.addEventListener('DOMContentLoaded', () => {
-  initCarousels();
-  initFloatingButton();
-  initLightbox();
-});
