@@ -33,6 +33,30 @@ header {
   overflow: hidden;
 }
 
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 200px;
+}
+
+.header-text {
+  position: relative;
+  z-index: 1;
+}
+
+.header-image {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 200px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+
 header::before {
   content: '';
   position: absolute;
@@ -307,6 +331,25 @@ section h2::after {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .header-content {
+    min-height: auto;
+  }
+
+  .header-text {
+    margin-bottom: 2rem;
+  }
+
+  .header-image {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+  
   header h1 {
     font-size: 2rem;
   }
