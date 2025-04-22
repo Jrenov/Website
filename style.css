@@ -58,27 +58,6 @@ header p {
   position: relative;
 }
 
-/* Boutons modernes */
-button, .pj-link {
-  background-color: var(--accent-color);
-  color: var(--white);
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: var(--shadow);
-}
-
-button:hover, .pj-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  background-color: #c0392b;
-}
-
 /* Sections modernes */
 section {
   padding: 4rem 1rem;
@@ -347,25 +326,6 @@ section h2::after {
   .supplier-logo {
     max-width: 120px;
   }
-}
-
-/* Styles des liens */
-.pj-link {
-  display: inline-block;
-  margin: 1rem 0;
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--accent-color);
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  transition: var(--transition);
-  box-shadow: var(--shadow);
-}
-
-.pj-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  background-color: #c0392b;
 }
 
 /* Carrousel */
