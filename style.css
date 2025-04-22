@@ -3,6 +3,7 @@
   --primary-color: #1B7B8E;    /* Bleu pétrole/turquoise */
   --secondary-color: #115E6E;  /* Version plus foncée du bleu */
   --accent-color: #FFA000;     /* Orange/jaune vif */
+  --accent-color-dark: #c0392b; /* Version foncée de l'accent */
   --text-color: #333333;
   --light-bg: #f8f9fa;
   --white: #ffffff;
@@ -274,7 +275,7 @@ section h2::after {
 .contact button[type="submit"]:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  background-color: #c0392b;
+  background-color: var(--accent-color-dark);
 }
 
 /* Fournisseurs modernes */
@@ -398,7 +399,8 @@ section h2::after {
   transform: scale(1.02);
 }
 
-.carousel-nav {
+.carousel-nav,
+.lightbox-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -417,32 +419,38 @@ section h2::after {
   color: var(--white);
 }
 
-.carousel-nav:hover {
-  background-color: #c0392b;
+.carousel-nav:hover,
+.lightbox-nav:hover {
+  background-color: var(--accent-color-dark);
   transform: translateY(-50%) scale(1.1);
 }
 
-.carousel-nav.prev {
+.carousel-nav.prev,
+.lightbox-prev {
   left: 1rem;
 }
 
-.carousel-nav.next {
+.carousel-nav.next,
+.lightbox-next {
   right: 1rem;
 }
 
-@media (min-width: 768px) {
-  .content-wrapper {
-    flex-direction: row;
-    align-items: flex-start;
+@media (max-width: 768px) {
+  .carousel button,
+  .lightbox-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
-
-  .text-content {
-    flex: 1;
-    padding-right: 2rem;
+  
+  .carousel-nav.prev,
+  .lightbox-prev {
+    left: 0.5rem;
   }
-
-  .carousel {
-    width: 50%;
+  
+  .carousel-nav.next,
+  .lightbox-next {
+    right: 0.5rem;
   }
 }
 
@@ -486,62 +494,13 @@ section h2::after {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
-  color: var(--white);
+  color: var(--accent-color);
   font-size: 2.5rem;
   cursor: pointer;
   transition: var(--transition);
 }
 
 .lightbox-close:hover {
-  color: var(--accent-color);
+  color: var(--accent-color-dark);
   transform: scale(1.1);
-}
-
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  transition: var(--transition);
-}
-
-.lightbox-nav:hover {
-  background-color: var(--white);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.lightbox-prev {
-  left: 1rem;
-}
-
-.lightbox-next {
-  right: 1rem;
-}
-
-@media (max-width: 768px) {
-  .carousel button,
-  .lightbox-nav {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
-  
-  .carousel [data-carousel-prev],
-  .lightbox-prev {
-    left: 0.5rem;
-  }
-  
-  .carousel [data-carousel-next],
-  .lightbox-next {
-    right: 0.5rem;
-  }
 }
