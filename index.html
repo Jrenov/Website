@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jrenov - Vannes</title>
+  <meta name="description" content="Jrenov - Entreprise de rénovation intérieure et extérieure à Vannes. Spécialisée dans la rénovation de salles de bain, cuisines, et travaux d'extérieur." />
+  <title>Jrenov - Rénovation intérieure & extérieure à Vannes</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,7 +13,7 @@
     <p>Travaux de rénovation à Vannes</p>
   </header>
 
-  <a href="#contact" class="floating-contact-btn">
+  <a href="#contact" class="floating-contact-btn" aria-label="Contactez-nous">
     <span>Contactez-nous</span>
   </a>
 
@@ -51,9 +52,9 @@
               </p>
             </div>
             <div class="carousel">
-              <div class="carousel-track"></div>
-              <button class="carousel-nav prev">❮</button>
-              <button class="carousel-nav next">❯</button>
+              <div class="carousel-track" role="list"></div>
+              <button class="carousel-nav prev" aria-label="Image précédente">❮</button>
+              <button class="carousel-nav next" aria-label="Image suivante">❯</button>
             </div>
           </div>
         </div>
@@ -73,9 +74,9 @@
               </p>
             </div>
             <div class="carousel">
-              <div class="carousel-track"></div>
-              <button class="carousel-nav prev">❮</button>
-              <button class="carousel-nav next">❯</button>
+              <div class="carousel-track" role="list"></div>
+              <button class="carousel-nav prev" aria-label="Image précédente">❮</button>
+              <button class="carousel-nav next" aria-label="Image suivante">❯</button>
             </div>
           </div>
         </div>
@@ -95,9 +96,9 @@
               </p>
             </div>
             <div class="carousel">
-              <div class="carousel-track"></div>
-              <button class="carousel-nav prev">❮</button>
-              <button class="carousel-nav next">❯</button>
+              <div class="carousel-track" role="list"></div>
+              <button class="carousel-nav prev" aria-label="Image précédente">❮</button>
+              <button class="carousel-nav next" aria-label="Image suivante">❯</button>
             </div>
           </div>
         </div>
@@ -122,11 +123,11 @@
       <form name="contact" netlify>
         <input type="hidden" name="form-name" value="contact" />
         <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" required aria-required="true" />
         <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" required aria-required="true" />
         <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
         <button type="submit">Envoyer</button>
       </form>
     </section>
@@ -134,20 +135,20 @@
     <section class="suppliers-section">
       <h2>Nos fournisseurs</h2>
       <div class="suppliers-logos">
-        <img src="images/gedimat.png" alt="Gedimat" class="supplier-logo" />
-        <img src="images/cedeo.png" alt="Cedeo" class="supplier-logo" />
-        <img src="images/howdens.jpg" alt="Howdens" class="supplier-logo" />
-        <img src="images/setin.png" alt="GroupeSetin" class="supplier-logo" />
+        <img src="images/gedimat.png" alt="Gedimat" class="supplier-logo" loading="lazy" />
+        <img src="images/cedeo.png" alt="Cedeo" class="supplier-logo" loading="lazy" />
+        <img src="images/howdens.jpg" alt="Howdens" class="supplier-logo" loading="lazy" />
+        <img src="images/setin.png" alt="GroupeSetin" class="supplier-logo" loading="lazy" />
       </div>
     </section>
   </main>
 
   <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <button class="lightbox-nav lightbox-prev">❮</button>
-    <button class="lightbox-nav lightbox-next">❯</button>
-    <img class="lightbox-content" id="lightbox-img">
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Vue détaillée de l'image">
+    <span class="lightbox-close" aria-label="Fermer">&times;</span>
+    <button class="lightbox-nav lightbox-prev" aria-label="Image précédente">❮</button>
+    <button class="lightbox-nav lightbox-next" aria-label="Image suivante">❯</button>
+    <img class="lightbox-content" id="lightbox-img" alt="">
     <div class="lightbox-caption"></div>
   </div>
 
