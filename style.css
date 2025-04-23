@@ -217,25 +217,78 @@ section h2::after {
 
 /* Formulaire de contact moderne */
 .contact {
+  padding: 2rem;
+  background-color: var(--light-bg);
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.contact-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  flex: 1;
   background-color: var(--white);
+  padding: 2rem;
   border-radius: 15px;
   box-shadow: var(--shadow);
 }
 
-.contact form {
-  max-width: 600px;
-  margin: 0 auto;
+.contact-info {
+  flex: 1;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
 }
 
-.contact label {
+.contact-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.contact-info address {
+  font-style: normal;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.contact-info a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-info a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.contact-form h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--text-color);
 }
 
-.contact input,
-.contact textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1.5rem;
@@ -244,14 +297,14 @@ section h2::after {
   transition: var(--transition);
 }
 
-.contact input:focus,
-.contact textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   border-color: var(--accent-color);
   outline: none;
   box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
 }
 
-.contact button[type="submit"] {
+.contact-form button[type="submit"] {
   display: block;
   margin: 2rem auto;
   padding: 1rem 2rem;
@@ -265,10 +318,21 @@ section h2::after {
   box-shadow: var(--shadow);
 }
 
-.contact button[type="submit"]:hover {
+.contact-form button[type="submit"]:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   background-color: var(--accent-color-dark);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .contact-form,
+  .contact-info {
+    width: 100%;
+  }
 }
 
 .suppliers {

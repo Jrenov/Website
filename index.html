@@ -118,16 +118,30 @@
 
     <section id="contact" class="contact">
       <h2>Contact</h2>
-      <form name="contact" netlify>
-        <input type="hidden" name="form-name" value="contact" />
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required aria-required="true" />
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required aria-required="true" />
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
-        <button type="submit">Envoyer</button>
-      </form>
+      <div class="contact-container">
+        <div class="contact-form">
+          <h3>Pour une demande de devis</h3>
+          <form name="contact" netlify>
+            <input type="hidden" name="form-name" value="contact" />
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required aria-required="true" />
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required aria-required="true" />
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+            <button type="submit">Envoyer</button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <h3>Nos coordonnées</h3>
+          <address>
+            <p>1 bis avenue de la Marne<br>
+            56000 Vannes</p>
+            <p><a href="mailto:jrenov56@gmail.com">jrenov56@gmail.com</a></p>
+            <p><a href="tel:+33768648700">07 68 64 87 00</a></p>
+          </address>
+        </div>
+      </div>
     </section>
 
     <section class="suppliers">
