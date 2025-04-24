@@ -1,8 +1,9 @@
 :root {
-  --primary-color: #1B7B8E;    /* Bleu pétrole/turquoise */
+  --primary-color: #226d8c;    /* Bleu pétrole/turquoise */
   --secondary-color: #115E6E;  /* Version plus foncée du bleu */
-  --accent-color: #FFA000;     /* Orange/jaune vif */
+  --accent-color: #f3920f;     /* Orange/jaune vif */
   --accent-color-dark: #c0392b; /* Version foncée de l'accent */
+  --accent-color-light: #f9f8a9; /* Version claire de l'accent */
   --text-color: #333333;
   --light-bg: #f8f9fa;
   --white: #ffffff;
@@ -550,4 +551,28 @@ section h2::after {
 .lightbox-close:hover {
   color: var(--accent-color-dark);
   transform: scale(1.1);
+}
+
+.header-logo {
+  max-width: 265px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    max-width: 200px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
