@@ -236,7 +236,7 @@ section h2::after {
 }
 
 .contact-form {
-  flex: 1;
+  flex: 2;
   background-color: var(--white);
   padding: 2rem;
   border-radius: 15px;
