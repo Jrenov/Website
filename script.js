@@ -84,9 +84,9 @@ function loadCarouselImages(carouselId) {
     }
 
     img.dataset.caption = image.caption;
-    img.classList.add('w-full', 'flex-shrink-0', 'object-cover');
 
     // Ajouter dimensions explicites pour réduire le CLS
+    // Toutes les images sont maintenant en 16:9 (3264x1836 ou 1920x1080)
     img.setAttribute('width', '1600');
     img.setAttribute('height', '900');
     img.style.aspectRatio = '16/9';
