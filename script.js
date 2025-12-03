@@ -71,10 +71,26 @@ function loadCarouselImages(carouselId) {
     const img = document.createElement('img');
     img.src = `images/${carouselId}/${image.filename}`;
     img.alt = image.caption;
-    img.loading = 'lazy';
+
+    // Optimiser le chargement : première image eager, autres lazy
+    if (index === 0) {
+      img.loading = 'eager';
+      // High priority pour le premier carousel (above-the-fold)
+      if (carouselId === 'plomberie') {
+        img.fetchPriority = 'high';
+      }
+    } else {
+      img.loading = 'lazy';
+    }
+
     img.dataset.caption = image.caption;
     img.classList.add('w-full', 'flex-shrink-0', 'object-cover');
+
+    // Ajouter dimensions explicites pour réduire le CLS
+    img.setAttribute('width', '1600');
+    img.setAttribute('height', '900');
     img.style.aspectRatio = '16/9';
+
     img.onclick = () => {
       lightboxImg.src = img.src;
       lightboxCaption.textContent = image.caption;

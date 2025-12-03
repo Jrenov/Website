@@ -427,25 +427,30 @@ section h2::after {
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
+  background-color: #f0f0f0;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .carousel-track img {
   width: 100%;
   flex: 0 0 100%;
-  object-fit: cover;
-  aspect-ratio: 16/9;
+  height: auto;
   cursor: pointer;
   transition: var(--transition);
+  display: block;
+  background-color: #e0e0e0;
 }
 
 .carousel-track img:hover {
   transform: scale(1.02);
+  will-change: transform;
 }
 
 .carousel-nav,
@@ -491,12 +496,12 @@ section h2::after {
     height: 35px;
     font-size: 1rem;
   }
-  
+
   .carousel-nav.prev,
   .lightbox-prev {
     left: 0.5rem;
   }
-  
+
   .carousel-nav.next,
   .lightbox-next {
     right: 0.5rem;
