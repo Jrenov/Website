@@ -582,12 +582,18 @@ section h2::after {
   background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
   color: var(--white);
   text-align: center;
-  padding: 0.75rem 1rem;
-  font-size: 0.95rem;
+  padding: 2rem 1.5rem;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
 }
 
 .urgent-banner p {
   margin: 0;
+}
+
+.urgent-banner strong {
+  font-size: 1.5rem;
 }
 
 .urgent-banner a {
@@ -595,10 +601,31 @@ section h2::after {
   font-weight: bold;
   text-decoration: none;
   transition: var(--transition);
+  font-size: 1.6rem;
+  display: inline-block;
+  margin-left: 0.5rem;
 }
 
 .urgent-banner a:hover {
   text-decoration: underline;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .urgent-banner {
+    font-size: 1.2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .urgent-banner strong {
+    font-size: 1.3rem;
+  }
+
+  .urgent-banner a {
+    font-size: 1.4rem;
+    display: block;
+    margin: 0.5rem 0 0 0;
+  }
 }
 
 footer {
