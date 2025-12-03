@@ -591,7 +591,12 @@ section h2::after {
   font-size: 1.4rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   font-weight: 600;
-  min-height: 100px; /* Réserve l'espace pour éviter le CLS */
+  height: 100px; /* Hauteur fixe pour éliminer le CLS */
+  line-height: 1.4; /* Line-height fixe pour stabilité */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .urgent-banner p {
@@ -621,7 +626,7 @@ section h2::after {
   .urgent-banner {
     font-size: 1.2rem;
     padding: 1.5rem 1rem;
-    min-height: 120px; /* Hauteur ajustée pour mobile (texte sur 2-3 lignes) */
+    height: 130px; /* Hauteur fixe mobile (texte sur 2-3 lignes) */
   }
 
   .urgent-banner strong {
