@@ -3,15 +3,15 @@ const imageConfig = {
   "plomberie": {
     "images": [
       {
-        "filename": "salle-de-bain1.jpg",
+        "filename": "salle-de-bain1.webp",
         "caption": "Installation complète d'une salle de bain moderne"
       },
       {
-        "filename": "avant1.jpg",
+        "filename": "avant1.webp",
         "caption": "Salle de bain avant travaux"
       },
       {
-        "filename": "apres1.jpg",
+        "filename": "apres1.webp",
         "caption": "Salle de bain après travaux"
       }
     ]
@@ -19,15 +19,15 @@ const imageConfig = {
   "interieur": {
     "images": [
       {
-        "filename": "cuisine1.jpg",
+        "filename": "cuisine1.webp",
         "caption": "Cuisine avec pose de verrière"
       },
       {
-        "filename": "interieur1.jpg",
+        "filename": "interieur1.webp",
         "caption": "Création de cloisons et pose de sol"
       },
       {
-        "filename": "placo1.jpg",
+        "filename": "placo1.webp",
         "caption": "Pose de placo"
       }
     ]
@@ -35,15 +35,15 @@ const imageConfig = {
   "exterieur": {
     "images": [
       {
-        "filename": "terrasse-bois1.jpg",
+        "filename": "terrasse-bois1.webp",
         "caption": "Terrasse en bois sur mesure"
       },
       {
-        "filename": "ravalement1.jpg",
+        "filename": "ravalement1.webp",
         "caption": "Ravalement de façade"
       },
       {
-        "filename": "ravalement2.jpg",
+        "filename": "ravalement2.webp",
         "caption": "Ravalement de façade"
       }
     ]
@@ -71,6 +71,7 @@ function loadCarouselImages(carouselId) {
     const img = document.createElement('img');
     img.src = `images/${carouselId}/${image.filename}`;
     img.alt = image.caption;
+    img.loading = 'lazy';
     img.dataset.caption = image.caption;
     img.classList.add('w-full', 'flex-shrink-0', 'object-cover');
     img.style.aspectRatio = '16/9';
