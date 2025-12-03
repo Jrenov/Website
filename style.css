@@ -577,6 +577,30 @@ section h2::after {
   border: 0;
 }
 
+/* Bandeau dépannage urgent */
+.urgent-banner {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  color: var(--white);
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+.urgent-banner p {
+  margin: 0;
+}
+
+.urgent-banner a {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.urgent-banner a:hover {
+  text-decoration: underline;
+}
+
 footer {
   background-color: var(--primary-color);
   color: var(--white);
